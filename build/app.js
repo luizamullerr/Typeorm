@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express = require("express");
+var usuarios_1 = require("./usuarios");
+var produtos_1 = require("./produtos");
+var app = express();
+app.use(express.json());
+app.use("/user", usuarios_1.default);
+app.use("/produto", produtos_1.default);
+var PORT = process.env.PORT;
+app.listen(PORT, function () { console.log("Executando em http://localhost:".concat(PORT)); });
